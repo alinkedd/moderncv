@@ -107,6 +107,8 @@
         \ifdim\@photoframewidth=0pt%
           \setlength{\fboxsep}{0pt}\fi%
         \framebox{\includegraphics[width=\@photowidth]{\@photo}}%
+        % \if@left%
+        %   \hspace*{\separatorcolumnwidth}\fi%
         \if@right%
           \hspace*{\separatorcolumnwidth}\fi}}%
   % name and title (pre-rendering)
@@ -130,6 +132,7 @@
     \savebox{\makecvheadpicturebox}{\raisebox{-\height+\baselineskip}{\usebox{\makecvheadpicturebox}}}\fi%
   % rendering
   \if@left%
+    % \usebox{\makecvheadpicturebox}
     \usebox{\makecvheadnamebox}%
     \hfill%
     \llap{\usebox{\makecvheaddetailsbox}}% \llap is used to suppress the width of the box, allowing overlap if the value of makecvheadnamewidth is forced

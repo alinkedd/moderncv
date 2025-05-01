@@ -1,0 +1,82 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvcolor{black}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[]{classic}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[hmargin=60pt,vmargin=60pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[${DOCUMENT_LANGUAGE}]{babel}
+
+% personal data
+\name{${FIRST_NAME}}{${LAST_NAME}}                  % required, remove / comment the line if not wanted
+\title{${CV_POSITION}}                               % optional, remove / comment the line if not wanted
+\address{${MY_ADDRESS_STREET}}{${MY_ADDRESS_CITY}}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{${PHONE_NUMBER}}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{${EMAIL_ADDRESS}}                               % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{${LINKEDIN_SLUG}}                        % optional, remove / comment the line if not wanted
+\social[github]{${GITHUB_SLUG}}                              % optional, remove / comment the line if not wanted
+
+% \photo[64pt][0pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file % TODO: tweak to have photo over name
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+
+%-----       letter       ---------------------------------------------------------
+\recipient{${RECRUITMENT_TEAM}}{${COMPANY_NAME}\\${COMPANY_ADDRESS_STREET}\\${COMPANY_ADDRESS_CITY}}
+\date{${SEND_DATE}} % TODO: automatically generate date by default
+\subject{${APPLICATION_TYPE} als ${VACANCY_POSITION}}
+\opening{${TO_RECRUITER}}
+\closing{Mit freundlichen Grüßen}
+% \signature{0.8}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+\makelettertitle
+
+% --------------------------------------------------- 
+
+Motivation letter
+
+\makeletterclosing
+
+\clearpage
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Section}
+\cvitem{Cat 1}{El 1}
+\cvitem{Cat 2}{El 2}
+
+\clearpage
+
+\end{document}
